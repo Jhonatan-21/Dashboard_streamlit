@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import os
+from pathlib import Path
 
 st.title("Dados Gerais")
 
@@ -42,4 +43,5 @@ if 'filtros' in st.session_state:
 st.write(f"Visualizando {len(df)} registros após filtros.")
 
 # ... aqui entra o seu código de gráfico (px.bar, st.area_chart, etc)
+
 
