@@ -4,6 +4,7 @@ import plotly.graph_objects as go
 
 # importe da biblioteca os (python)
 import os
+from pathlib import Path
 
 st.title("APGAR5 por DT_ALTA")
 
@@ -53,6 +54,7 @@ if 'filtros' in st.session_state:
 st.write(f"Visualizando {len(df)} registros após filtros.")
 
 # ... aqui entra o seu código de gráfico (px.bar, st.area_chart, etc)
+
 
 
 
