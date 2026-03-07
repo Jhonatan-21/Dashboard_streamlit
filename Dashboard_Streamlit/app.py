@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import os
 
 st.set_page_config(
         page_title = "Seja bem-vindo!",
@@ -36,3 +37,4 @@ st.session_state['filtros'] = {
     'ubs': ubs_list
 
 }
+
