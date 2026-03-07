@@ -2,6 +2,9 @@ import streamlit as st
 import pandas as pd
 import os
 
+# import biblioteca função Path
+from pathlib import Path
+
 st.set_page_config(
         page_title = "Seja bem-vindo!",
         page_icon = ":earth:"
@@ -37,4 +40,5 @@ st.session_state['filtros'] = {
     'ubs': ubs_list
 
 }
+
 
