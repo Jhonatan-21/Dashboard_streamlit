@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import os
 
 st.title("IG do Obstetra por Nº de Partos")
 
@@ -15,7 +16,7 @@ st.plotly_chart(fig)
 #CONECTANDO AO SIDEBAR (FILTROS GLOBAIS)
 
 # Carrega os dados
-df = pd.read_excel('BD_PARTOS_original.xlsx')
+df = pd.read_excel(bd_partos_path)
 df['DT_INTERNACAO'] = pd.to_datetime(df['DT_INTERNACAO'])
 
 # Aplica os filtros do session_state, se existirem
@@ -36,3 +37,4 @@ if 'filtros' in st.session_state:
 st.write(f"Visualizando {len(df)} registros após filtros.")
 
 # ... aqui entra o seu código de gráfico (px.bar, st.area_chart, etc)
+
