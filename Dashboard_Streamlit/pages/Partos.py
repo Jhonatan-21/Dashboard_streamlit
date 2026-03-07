@@ -3,7 +3,10 @@ import pandas as pd
 
 st.title("Partos")
 
-df = pd.read_excel('BD_PARTOS_original.xlsx')
+cwd = os.getcwd()
+bd_partos_path = Path(cwd, "Dashboard_Streamlit", "BD_PARTOS_original.xlsx")
+
+df = pd.read_excel(bd_partos_path)
 
 df['DT_INTERNACAO'] = pd.to_datetime(df['DT_INTERNACAO'])
 st.area_chart(data=df, x='DT_INTERNACAO', y='PARTOS')
@@ -30,4 +33,5 @@ if 'filtros' in st.session_state:
 
 # AGORA, use este 'df' filtrado para criar seus gráficos!
 st.write(f"Visualizando {len(df)} registros após filtros.")
+
 # ... aqui entra o seu código de gráfico (px.bar, st.area_chart, etc)
