@@ -9,7 +9,10 @@ st.set_page_config(
 st.sidebar.success("Escolha uma das opções!")
 st.title("Início")
 
-df = pd.read_excel('BD_PARTOS_original.xlsx')
+cwd = os.getcwd()
+bd_partos_path = Path(cwd, "Dashboard_Streamlit", "BD_PARTOS_original.xlsx")
+
+df = pd.read_excel(bd_partos_path)
 st.dataframe(df)
 
 #FILTROS PARA AS DEMAIS PÁGINAS
@@ -31,4 +34,5 @@ st.session_state['filtros'] = {
     'ig': ig_list,
     'bairro': bairro_list,
     'ubs': ubs_list
+
 }
