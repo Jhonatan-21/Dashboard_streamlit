@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import os
+from pathlib import Path
 
 st.title("UBS por Nº de Partos")
 
@@ -44,4 +45,5 @@ if 'filtros' in st.session_state:
 st.write(f"Visualizando {len(df)} registros após filtros.")
 
 # ... aqui entra o seu código de gráfico (px.bar, st.area_chart, etc)
+
 
