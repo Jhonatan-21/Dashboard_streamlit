@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
+import os
 
 # importe da biblioteca os (python)
 import os
@@ -53,4 +54,5 @@ if 'filtros' in st.session_state:
 st.write(f"Visualizando {len(df)} registros após filtros.")
 
 # ... aqui entra o seu código de gráfico (px.bar, st.area_chart, etc)
+
 
