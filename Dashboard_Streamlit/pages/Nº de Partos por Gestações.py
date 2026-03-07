@@ -4,7 +4,10 @@ import plotly.express as px
 
 st.title("Nº de Partos por Gestações")
 
-df = pd.read_excel('BD_PARTOS_original.xlsx')
+cwd = os.getcwd()
+bd_partos_path = Path(cwd, "Dashboard_Streamlit", "BD_PARTOS_original.xlsx")
+
+df = pd.read_excel(bd_partos_path)
 
 def categorizar_gestacoes(valor):
     if valor <= 2: return '0 - 2'
@@ -49,4 +52,5 @@ if 'filtros' in st.session_state:
 
 # AGORA, use este 'df' filtrado para criar seus gráficos!
 st.write(f"Visualizando {len(df)} registros após filtros.")
+
 # ... aqui entra o seu código de gráfico (px.bar, st.area_chart, etc)
