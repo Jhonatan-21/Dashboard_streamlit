@@ -4,7 +4,10 @@ import plotly.graph_objects as go
 
 st.title("APGAR5 por DT_ALTA")
 
-df = pd.read_excel('BD_PARTOS_original.xlsx')
+cwd = os.getcwd()
+bd_partos_path = Path(cwd, "Dashboard_Streamlit", "BD_PARTOS_original.xlsx")
+
+df = pd.read_excel(bd_partos_path)
 
 valor_apgar = df['APGAR5'].mean()
 
@@ -45,4 +48,5 @@ if 'filtros' in st.session_state:
 
 # AGORA, use este 'df' filtrado para criar seus gráficos!
 st.write(f"Visualizando {len(df)} registros após filtros.")
+
 # ... aqui entra o seu código de gráfico (px.bar, st.area_chart, etc)
